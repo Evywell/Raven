@@ -20,7 +20,13 @@ use Raven\Framework\Network\Response;
 abstract class BaseApplication implements ApplicationInterface
 {
 
+    /**
+     * @var Configurator
+     */
     private $configuration;
+    /**
+     * @var string
+     */
     private $environment;
     /**
      * @var Container
@@ -30,7 +36,13 @@ abstract class BaseApplication implements ApplicationInterface
      * @var FileSystemCache
      */
     private $cache;
+    /**
+     * @var string
+     */
     protected $_rootDir;
+    /**
+     * @var string
+     */
     protected $_cacheDir;
     /**
      * @var MiddlewareRunner
