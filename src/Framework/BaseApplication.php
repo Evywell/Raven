@@ -16,7 +16,6 @@ use Raven\Framework\Network\Exception\NetworkException;
 use Raven\Framework\Network\Exception\NotFoundException;
 use Raven\Framework\Network\Request;
 use Raven\Framework\Network\Response;
-use Raven\Framework\Router\RavenRouter;
 
 abstract class BaseApplication implements ApplicationInterface
 {
