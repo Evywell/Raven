@@ -11,6 +11,7 @@ class NetworkException extends RavenFrameworkException
 {
 
     private $templatePath = "../app/Error/Template";
+    private $defaultTemplate = "../app/Error/Template/DefaultException.php";
 
     public function __construct($message = "", $code = 0, Exception $previous = null)
     {
@@ -24,7 +25,7 @@ class NetworkException extends RavenFrameworkException
         if(file_exists($template)) {
             return sprintf(file_get_contents($template), $this->getCode(), $message);
         }
-        return $this->getMessage();
+        return sprintf(file_get_contents($this->defaultTemplate), $this->getMessage(), $this->getCode(), $this->getMessage(), $message);
     }
 
 }

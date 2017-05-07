@@ -21,4 +21,9 @@ class TestController extends BaseController
         return new Response("INDEX 2");
     }
 
+    public function ip()
+    {
+        return $this->response;
+    }
+
 }

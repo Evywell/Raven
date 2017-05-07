@@ -31,7 +31,10 @@ class Application extends BaseApplication
     public function registerRouteMiddleware(): array
     {
         $middleware = [
-            // 'csrf' => \Raven\Middleware\CsrfMiddleware::class
+            'web' => [
+                \Raven\Middleware\CsrfMiddleware::class,
+            ],
+            'ip' => \App\CMSBundle\Middleware\IpMiddleware::class,
         ];
 
         return $middleware;

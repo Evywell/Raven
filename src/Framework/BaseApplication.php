@@ -93,6 +93,7 @@ abstract class BaseApplication implements ApplicationInterface
      */
     private function handleRequest(Request $request) : Response
     {
+        // TODO: Remplacer ça par une classe qui gère l'HTTP
         $response = new Response();
         // Load global middleware
         $response = $this->loadMiddleware($request, $response);
@@ -117,7 +118,14 @@ abstract class BaseApplication implements ApplicationInterface
 
         foreach ($middleware_name as $item) {
             if(array_key_exists($item, $this->routeQueue)) {
-                $queue->add($this->routeQueue[$item]);
+                // Is routeQueue a group ?
+                if(is_array($this->routeQueue[$item])) {
+                    foreach ($this->routeQueue[$item] as $value) {
+                        $queue->add($value);
+                    }
+                }else{
+                    $queue->add($this->routeQueue[$item]);
+                }
             }
         }
 

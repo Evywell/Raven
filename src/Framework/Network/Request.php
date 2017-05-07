@@ -90,4 +90,12 @@ class Request
         return $this->request;
     }
 
+    /**
+     * @return ServerBag
+     */
+    public function getServer()
+    {
+        return $this->server;
+    }
+
 }
