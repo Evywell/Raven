@@ -9,3 +9,4 @@ $container->set('router', function ($globals, $container) {
 })->lock();
 
 $container->set('session', \Raven\Framework\Session\Session::class)->lock();
+$container->set('event_dispatcher', \Raven\Framework\Event\EventDispatcher::class)->lock();

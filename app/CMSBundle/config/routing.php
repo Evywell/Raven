@@ -18,4 +18,15 @@ return [
             '_controller' => 'CMSBundle:Test:ip',
             '_middleware' => ['ip']
         ],
+    'cms_edit' =>
+        [
+            'path' => '/{id}/edit',
+            '_controller' => 'CMSBundle:Test:edit',
+            'parameters' => ['id' => '[0-9]+']
+        ],
+    'cms_add' =>
+        [
+            'path' => '/add',
+            '_controller' => 'CMSBundle:Test:add'
+        ],
 ];

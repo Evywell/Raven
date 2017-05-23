@@ -323,6 +323,7 @@ abstract class BaseApplication implements ApplicationInterface
         }
 
         require_once $services_filename;
+        $container->set('config', $this->configuration)->lock();
         return $container;
     }
 
