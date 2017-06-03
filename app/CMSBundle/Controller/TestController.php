@@ -14,12 +14,12 @@ class TestController extends BaseController
 
     public function index(Request $request, $id, $slug)
     {
-        return new Response("lol");
+        return $this->render('CMSBundle:Test:index.php', compact('id', 'slug'));
     }
 
     public function index2(Request $request)
     {
-        return new Response("INDEX 2");
+        return $this->render('CMSBundle:Test:index2.php', []);
     }
 
     public function ip()

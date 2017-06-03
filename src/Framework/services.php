@@ -10,3 +10,4 @@ $container->set('router', function ($globals, $container) {
 
 $container->set('session', \Raven\Framework\Session\Session::class)->lock();
 $container->set('event_dispatcher', \Raven\Framework\Event\EventDispatcher::class)->lock();
+$container->set('template_builder', \Raven\Template\ViewBuilder::class)->lock();

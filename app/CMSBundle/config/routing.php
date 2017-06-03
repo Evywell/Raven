@@ -2,9 +2,9 @@
 return [
     'cms_homepage' =>
         [
-            'path' => '/index/{id}/{slug}.txt',
+            'path' => '/index/{id}/{slug}',
             '_controller' => 'CMSBundle:Test:index',
-            'parameters' => ['id' => '[0-9]+', 'slug' => '[a-z]+']
+            'parameters' => ['id' => '[0-9]+', 'slug' => '[a-z\-0-9]+']
         ],
     'cms_homepage2' =>
         [
