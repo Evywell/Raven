@@ -8,7 +8,10 @@
     <title>Document</title>
 </head>
 <body>
-    <?php echo $this->fetch('sidebar'); ?>
-    <?php echo $this->fetch('content'); ?>
+    <ul>
+    <li>Accueil</li>
+    <li>Blog</li>
+    </ul>
+    salut
 </body>
 </html>

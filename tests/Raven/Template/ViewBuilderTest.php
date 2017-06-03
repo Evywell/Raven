@@ -18,7 +18,8 @@ class ViewBuilderTest extends RavenTestCase
         $builder->addHelpers(['html' => new HtmlHelper()]);
         $view = $builder->createView(__DIR__ . '/views/home.php');
         $content = $view->render();
-        var_dump($content);
+        $content = str_replace([' ', '\r', '\n'], '', $content);
+        $this->assertEquals(str_replace([' ', '\r', '\n'], '', file_get_contents(__DIR__ . '/examples/home')), $content);
     }
 
 }
